@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
+const keys = require('./config/keys');
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 
 // database connection
-const dbURI = 'mongodb+srv://CDLAPP:jBzCkH3c1dU34JzL@cdl.zvjvq.mongodb.net/<dbname>?retryWrites=true&w=majority';
+const dbURI = keys.mongodb.dbURI;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
   .then((result) => app.listen(3000))
   .catch((err) => console.log(err));
