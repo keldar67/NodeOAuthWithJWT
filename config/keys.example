@@ -1,0 +1,10 @@
+// Add this file to .gitignore
+
+module.exports = {
+    mongodb:{
+        dbURI:'mongodb+srv://<USERNAME>:<PASSWORD>@cdl.zvjvq.mongodb.net/<DATABASE>?retryWrites=true&w=majority'
+    },
+    session: {
+        cookieKey: '<ENCRYPTIONSTRING>'
+    }
+};
